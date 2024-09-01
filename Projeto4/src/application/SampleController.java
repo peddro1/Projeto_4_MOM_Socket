@@ -126,10 +126,14 @@ public class SampleController {
 	void toggleStatus(ActionEvent event) throws JMSException {
 		if(this.statusButton.getText().equals("ONLINE")) {
 			this.statusButton.setText("OFFLINE");
+			this.message.setDisable(true);
+			this.sendButton.setDisable(true);
 		}
 		else {
 			this.statusButton.setText("ONLINE");
 			this.consumidor = new Consumidor(this.remetente, this.chat);
+			this.message.setDisable(false);
+			this.sendButton.setDisable(false);
 		}
 			
 	}
